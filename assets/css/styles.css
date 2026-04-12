@@ -194,7 +194,7 @@ figure {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    min-height: 92px;
+    min-height: 100px;
 }
 
 .brand {
@@ -202,15 +202,19 @@ figure {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    max-width: 430px;
+    max-width: 520px;
 }
 
 .brand img {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 64px;
+    max-height: 80px;
     object-fit: contain;
+}
+
+body[data-theme="dark"] .brand img {
+    mix-blend-mode: screen;
 }
 
 .site-nav {
@@ -733,6 +737,16 @@ figure {
     color: var(--muted);
 }
 
+.form-success-msg {
+    margin-top: 1rem;
+    padding: 1.1rem 1.4rem;
+    border-radius: 16px;
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-weight: 500;
+    border-left: 3px solid var(--accent);
+}
+
 .site-footer {
     margin-top: 2rem;
     padding: 0 0 2rem;
@@ -962,15 +976,15 @@ figure {
     }
 
     .header-row {
-        min-height: 82px;
+        min-height: 90px;
     }
 
     .brand {
-        max-width: 300px;
+        max-width: 360px;
     }
 
     .brand img {
-        max-height: 50px;
+        max-height: 62px;
     }
 
     .hero-visual img,

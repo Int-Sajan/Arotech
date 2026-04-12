@@ -15,6 +15,14 @@ const getPreferredTheme = () => {
 
 const applyTheme = (theme) => {
     document.body.dataset.theme = theme;
+
+    const logoImg = document.querySelector('.brand img');
+    if (logoImg) {
+        const src = theme === 'dark'
+            ? logoImg.getAttribute('data-dark-src')
+            : logoImg.getAttribute('data-light-src');
+        if (src) logoImg.src = src;
+    }
 };
 
 const updateThemeToggle = (toggleButton, theme) => {
@@ -106,4 +114,12 @@ if ('IntersectionObserver' in window && revealItems.length > 0) {
     revealItems.forEach((item) => observer.observe(item));
 } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+// Show form success message when redirected back after submission
+const formSuccess = document.getElementById('formSuccess');
+if (formSuccess && new URLSearchParams(window.location.search).get('sent') === '1') {
+    formSuccess.style.display = 'block';
+    document.querySelector('.contact-form')?.style.setProperty('display', 'none');
+    window.history.replaceState({}, '', '/contact.html');
 }

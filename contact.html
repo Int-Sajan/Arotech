@@ -22,7 +22,7 @@
     </div>
     <header class="site-header">
         <div class="container header-row">
-            <a class="brand" href="/index.html" aria-label="Arotech Solutions home"><img src="/assets/images/logo.png" alt="Arotech Solutions logo"></a>
+            <a class="brand" href="/index.html" aria-label="Arotech Solutions home"><img src="/assets/images/arotech%20cropped%20png.png" alt="Arotech Solutions logo" data-light-src="/assets/images/arotech%20cropped%20png.png" data-dark-src="/assets/images/arotech%20black%20jpeg.png"></a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
             <nav class="site-nav" id="site-nav">
                 <a href="/index.html">Home</a>
@@ -79,11 +79,16 @@
                     <p>
                         Use the form below to share the service you need, your property type, and any timing details that will help us understand the project.
                     </p>
+                    <div class="form-success-msg" id="formSuccess" style="display:none">
+                        <p><strong>Message sent.</strong> We will be in touch shortly.</p>
+                    </div>
                 </div>
                 <form class="contact-form reveal-card" action="https://formsubmit.co/info@arotechsolutions.ca" method="post">
                     <input type="hidden" name="_subject" value="New inquiry from Arotech Solutions website">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="true">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://int-sajan.github.io/contact.html?sent=1">
+                    <input type="text" name="_honey" style="display:none">
                     <label>
                         Full Name
                         <input type="text" name="Full Name" required>
@@ -98,7 +103,8 @@
                     </label>
                     <label>
                         Service Needed
-                        <select name="Service Needed">
+                        <select name="Service Needed" required>
+                            <option value="" disabled selected>Select a service...</option>
                             <option>Network Cabling</option>
                             <option>Fiber Optic Installation</option>
                             <option>Access Control</option>
